@@ -50,4 +50,48 @@ BURGER FRECCIA SINISTRA
   -o-transform: translateX(-10px) rotate(45deg);
   transform: translateX(-10px) rotate(45deg);
 }
-//ALTRO BURGER FRECCIA
+
+
+//MENU A SCOMPARSA CON SCROLL
+
+var halfWindow = window.innerHeight / 2;
+var navigation = document.querySelector(".top-button");
+
+window.addEventListener("scroll", function(){
+  var scrolled = window.scrollY;
+  if(scrolled >= halfWindow){
+      navigation.classList.remove('hide');
+  } else {
+      navigation.classList.add('hide');
+  }
+  
+})
+
+//EVENTO CLICK MENU A COMPARSA
+
+//js
+
+const btn = document.getElementById("btn");
+const menu = document.getElementById("menu");
+
+btn.addEventListener("click", function() {
+  if (menu.style.display === "none") {
+    menu.style.display = "block";
+  } else {
+    menu.style.display = "none";
+  }
+});
+
+//html da mostrare
+
+<ul id="menu" style="display: none;">
+  <li>Opcion 1</li>
+  <li>Opcion 2</li>
+  <li>Opcion 3</li>
+</ul
+
+//html bottone
+
+<button id="btn">Mostrar menú</button>
+
+
