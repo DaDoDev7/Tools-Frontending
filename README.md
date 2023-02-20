@@ -94,4 +94,68 @@ btn.addEventListener("click", function() {
 
 <button id="btn">Mostrar menú</button>
 
+// lista effetti corso
+
+
+Testo sottolineatura dinamica all'hover
+
+.testo_da_sottolineare{
+  position: relative;
+  a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -5px; //outline and text distance
+    left: 0;
+    background-color: crimson;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+Primo menu hamburger 
+
+.burger1{
+  transition: .3s all ease-in-out;
+  &:hover{
+    transform: rotate(180deg);
+    box-shadow: inset -3px 0 0 rgb(201, 133, 7), inset 0 -3px 0 rgb(201, 133, 7), inset 3px 0 0 rgb(201, 133, 7), inset 0 3px 0 rgb(201, 133, 7);
+  }
+  &:hover div:nth-of-type(1),&:hover div:nth-of-type(3){
+    width: 30%;
+  }
+}
+
+Secondo menu hamburger
+
+.burger2{
+  transition: all 0.5s ease-in-out;
+  div{
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover{
+    box-shadow: inset -3px 0 0 transparent, inset 0 -3px 0 transparent, inset 3px 0 0 transparent, inset 0 3px 0 transparent;
+  }
+  &:hover div:nth-of-type(2){
+    display: none;
+  }
+  &:hover div:nth-of-type(1),&:hover div:nth-of-type(3){
+    top: 50%;
+  }
+  &:hover div:nth-of-type(1){
+    transform: translate(-50%,-50%) rotate(-45deg);
+  }
+  &:hover div:nth-of-type(3){
+    transform: translate(-50%,-50%) rotate(45deg);
+  }
+}
+
+/************************************************************/
+
 
